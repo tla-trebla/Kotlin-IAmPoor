@@ -39,7 +39,8 @@ fun Greeting(name: String) {
 @Composable
 fun Title() {
     Text(
-        text = "I Am Poor"
+        text = "I Am Poor",
+        Modifier.offset(x = 160.dp, y = 300.dp)
     )
 }
 
