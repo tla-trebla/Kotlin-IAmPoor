@@ -6,12 +6,14 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -23,7 +25,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             IAmPoorTheme {
                 // A surface container using the 'background' color from the theme
-                Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = Color.Gray) {
                     Title()
                     RockImage()
                 }
@@ -43,10 +47,14 @@ fun Title() {
 
 @Composable
 fun RockImage() {
+    val image = painterResource(id = R.drawable.coal)
+    val desc = "Image of Rock"
+    val imageModifier = Modifier
+        .offset(x = 10.dp, y = 170.dp)
     Image(
-        painter = painterResource(id = R.drawable.coal),
-        contentDescription = "Image of Rock",
-        Modifier.offset(x = 10.dp, y = 170.dp)
+        painter = image,
+        contentDescription = desc,
+        modifier = imageModifier
     )
 }
 
