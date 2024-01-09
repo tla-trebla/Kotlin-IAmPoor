@@ -40,7 +40,8 @@ fun Greeting(name: String) {
 fun Title() {
     Text(
         text = "I Am Poor",
-        Modifier.offset(x = 160.dp, y = 300.dp)
+        Modifier.offset(x = 145.dp, y = 300.dp),
+        style = MaterialTheme.typography.headlineMedium
     )
 }
 
